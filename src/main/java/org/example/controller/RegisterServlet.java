@@ -3,6 +3,7 @@ package org.example.controller;
 import org.example.model.pojo.Result;
 import org.example.service.UserService;
 import org.example.service.impl.UserServiceImpl;
+import org.example.util.JsonUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.sql.*;
 
@@ -19,7 +21,7 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        response.setContentType("text/plain");
+        response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
 
         System.out.println("进入servleet");
@@ -40,9 +42,16 @@ public class RegisterServlet extends HttpServlet {
 
         if(register.isSuccess()) {
             System.out.println("success");
+
         } else {
             System.out.println("false");
         }
+
+        //重定向url
+        String redirectURL = "http://localhost:8080/myApp_war/";
+        // 发送重定向响应
+        response.sendRedirect(redirectURL);
+
     }
 
 
