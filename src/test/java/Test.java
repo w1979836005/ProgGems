@@ -62,4 +62,10 @@ public class Test {
 //
 //    }
 
+    @org.junit.Test
+    public  void  getUserTest() {
+        UserDao userDao = DaoFactory.getUserDao();
+        User user = userDao.getUser("18474314491","8cebb7a53a64c354c8091a6c940218c2");
+        System.out.println(user);
+    }
 }

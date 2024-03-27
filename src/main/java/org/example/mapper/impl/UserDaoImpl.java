@@ -59,16 +59,52 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
+
     @Override
     public User getUser(String username) {
 
-
-        return null;
+        String sql = "SELECT * FROM users WHERE username = ?";
+        PreparedStatementSetter pss = ps -> ps.setString(1, username);
+        ResultSetExtractor<User> rse = rs -> {
+            if (rs.next()) {
+                User user = new User();
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setEmail(rs.getString("email"));
+                return user;
+            }
+            return null;
+        };
+        try {
+            return executeQuery(sql, pss, rse);
+        } catch (SQLException e) {
+            throw new DaoException(e.getMessage(), e);
+        }
     }
 
     @Override
     public User getUser(String username, String password) {
-        return null;
+        String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+        PreparedStatementSetter pss = ps -> {
+            ps.setString(1, username);
+            ps.setString(2, password);
+        };
+        ResultSetExtractor<User> rse = rs -> {
+            if (rs.next()) {
+                User user = new User();
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setEmail(rs.getString("email"));
+                // 设置其他属性...
+                return user;
+            }
+            return null;
+        };
+        try {
+            return executeQuery(sql, pss, rse);
+        } catch (SQLException e) {
+            throw new DaoException(e.getMessage(), e);
+        }
     }
 
     @Override

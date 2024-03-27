@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: ‘Poppins’, sans-serif;
+}
+
+body{
+    background: url("../image/homepage.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    height: 80px;
+}
+
+.login{
+    color: white;
+}
+.nav a{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 8px 16px;
+    transition: 300ms;
+    border-radius: 99px;
+}
+.nav a:hover{
+    background: rgba(0,0,0,0.2);
+}
+.user-from-group a{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+}
+.signup{
+    border: rgba(255,255,255,0.5) 2px solid;
+    padding: 8px 16px;
+    margin-left: 16px;
+    border-radius: 99px;
+    transition: 300ms;
+}
+.signup:hover{
+    background: white;
+    color: black;
+}
+.nav .logo{
+    display: none;
+}
+
+#check{
+    display: none;
+}
+.user-from-group label{
+    display: none;
+}
+.subscribe{
+    color: white;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    text-shadow: 10px 0px 10px rgba(0,0,0,0.5);
+    font-size: 40px;
+    z-index: -1;
+}
+@media(max-width: 786px){
+    .nav{
+        position:absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        background: #0f172a;
+        height: 100vh;
+        width: 50%;
+        padding: 0px 20px;
+        gap: 16px;
+        transition: 500ms;
+        box-shadow: 10px 0px 10px rgba(0,0,0,0.2);
+    }
+    .nav .logo{
+        margin-left: 16px;
+        margin-top: 20px;
+        display: block;
+    }
+    .divider{
+        background: rgba(255,255,255,0.1);
+        width: 100%;
+        height: 2px;
+        margin: 10px 0px;
+    }
+    .user-from-group{
+        display: flex;
+        align-items: center;
+    }
+    .signup{
+        margin-right: 16px;
+
+    }
+    .menu{
+        font-size: 45px;
+        color: white;
+        cursor: pointer;
+    }
+    #check:checked~.user-from-group .menu{
+        display: none;
+    }
+    .close-menu{
+        font-size: 45px;
+        color: white;
+        cursor: pointer;
+    }
+    .user-from-group .close-menu{
+        display: none;
+    }
+    #check:checked~.user-from-group .close-menu{
+        display: block;
+    }
+    #check:checked~.nav{
+        left:0%;
+
+    }
+}
