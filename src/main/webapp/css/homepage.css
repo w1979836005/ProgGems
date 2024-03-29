@@ -129,4 +129,38 @@ header{
         left:0%;
 
     }
+
+    .nav {
+        display: flex;
+        flex-direction: row-reverse; /* 将导航菜单从右到左排列 */
+    }
+
+    .nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18px;
+        padding: 8px 16px;
+        transition: 300ms;
+        border-radius: 99px;
+        margin-left: auto; /* 将文字标签推到最左侧 */
+    }
+
+    /* 调整导航菜单项的顺序 */
+    .nav a:nth-child(4) {
+        order: 1;
+    }
+
+    .nav a:nth-child(3) {
+        order: 2;
+    }
+
+    .nav a:nth-child(2) {
+        order: 3;
+    }
+
+    .nav a:nth-child(1) {
+        order: 4;
+    }
+
 }

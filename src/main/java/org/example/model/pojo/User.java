@@ -23,6 +23,11 @@ public class User implements Serializable {
         this.email = email;
     }
 
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
     // Getter 和 Setter 方法
     public Integer getUserId() {
         return userId;

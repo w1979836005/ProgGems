@@ -11,22 +11,100 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+    <style>
+        .avatar {
+            width: 40px; /* Adjust this value as needed */
+            height: 40px; /* Adjust this value as needed */
+            border-radius: 50%;
+            overflow: hidden;
+            margin-left: auto;
+            margin-right: 16px; /* Adjust this value as needed */
+        }
+
+        .avatar img {
+            width: 100%;
+            height: auto;
+        }
+
+        header {
+            display: flex;
+            align-items: center; /* 垂直居中 */
+            justify-content: space-between; /* 水平居中 */
+            padding: 0 20px; /* 添加左右内边距 */
+        }
+
+        .logo {
+            /* margin-right: auto; 将logo推到最左边 */
+        }
+
+        .search-box {
+            flex-grow: 1; /* 占据剩余空间 */
+            margin: 0 20px; /* 调整搜索框周围的间距 */
+            background-color: rgba(0, 0, 0, 0.2); /* 设置搜索框背景颜色为半透明 */
+            border: none; /* 去除边框 */
+            display: flex; /* 将内部元素布局为弹性盒子 */
+            align-items: center; /* 垂直居中 */
+            padding: 8px; /* 调整搜索框内边距 */
+            border-radius: 20px; /* 设置搜索框的圆角 */
+        }
+
+        .search-box input[type="text"] {
+            flex-grow: 1; /* 输入框占据剩余空间 */
+            background: none; /* 去除背景 */
+            outline: none; /* 去除默认的轮廓线 */
+            font-size: 16px; /* 设置字体大小 */
+            color: #fff; /* 设置文字颜色 */
+            border: none; /* 去除边框 */
+            margin-right: 8px; /* 调整输入框与按钮之间的间距 */
+        }
+
+        .search-box button {
+            background-color: transparent; /* 设置按钮背景颜色为透明 */
+            border: none; /* 去除边框 */
+            outline: none; /* 去除默认的轮廓线 */
+            cursor: pointer; /* 设置光标为手型 */
+        }
+
+        .search-box button i {
+            font-size: 20px; /* 设置图标大小 */
+            color: #fff; /* 设置图标颜色 */
+        }
+
+        .user-from-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-from-group a {
+            color: #fff;
+            margin-left: 8px; /* 调整左侧间距 */
+            font-size: 14px; /* 调整字体大小 */
+        }
+    </style>
 </head>
 <body>
 <header>
     <input type="checkbox" name="check" id="check">
-    <h1 class="logo">Logo</h1>
+    <!-- 替换logo文本为图片 -->
+    <!-- <h1 class="logo">Logo</h1> -->
+    <img src="" alt="Logo" class="logo">
     <nav class="nav">
-        <h1 class="logo">Logo</h1>
         <div class="divider"></div>
         <a href="#">Home</a>
-        <a href="#">About</a>
+        <a href="http://localhost:8080/myApp_war/html/index.html">About</a>
         <a href="#">Services</a>
         <a href="#">Contact</a>
     </nav>
+    <div class="search-box">
+        <input type="text" placeholder="搜索..."> <!-- 添加透明搜索框 -->
+        <button type="submit"><i class="bx bx-search"></i></button> <!-- 添加搜索按钮 -->
+    </div>
     <div class="user-from-group">
-        <a class="login" href="#">Logout</a>
-        <a class="signup" href="#">个人主页</a>
+        <!-- 使用圆形头像框 -->
+        <div class="avatar">
+            <img src="../image/1.jpg" alt="Avatar">
+        </div>
+        <a class="signup" href="#">退出登陆</a> <!-- 移动退出登陆标签 -->
         <label for="check">
             <i class='bx bx-menu menu'></i>
             <i class='bx bx-x' close-menu></i>

@@ -2,6 +2,7 @@ package org.example.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.model.pojo.Result;
+import org.example.model.pojo.User;
 import org.example.service.UserService;
 import org.example.service.impl.UserServiceImpl;
 import org.example.util.JsonUtils;
@@ -11,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
@@ -38,7 +40,12 @@ public class LoginServlet extends HttpServlet {
 
             if(result.isSuccess()) {
                 System.out.println("success");
-                //
+
+                //加入seesion
+                User user = new User(username,password);
+                HttpSession session = req.getSession();
+                session.setAttribute("user", user);
+                //重定向到主页
                 String redirectURL = "http://localhost:8080/myApp_war/html/homepage.html";
                 // 发送重定向响应
                 resp.sendRedirect(redirectURL);
