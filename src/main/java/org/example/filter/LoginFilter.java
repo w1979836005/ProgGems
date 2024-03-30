@@ -22,7 +22,7 @@ public class LoginFilter implements Filter {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
 
-        String []urls = {"/myApp_war/","/js/","/image/","/css/","/myApp_war/login","/myApp_war/register"};
+        String []urls = {"/myApp_war/","/js/","/myApp_war/image/1.jpg","/myApp_war/css/81.css","/myApp_war/login","/myApp_war/register"};
         String url = ((HttpServletRequest) request).getRequestURI();
         System.out.println(url);
 
