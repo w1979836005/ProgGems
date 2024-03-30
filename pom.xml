@@ -65,12 +65,30 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.11.0</version> <!-- 请替换为最新版本号 -->
+        </dependency>
+
     </dependencies>
 
 
 
     <packaging>war</packaging>
-    <build>
 
+    <build>
+        <plugins>
+            <!--Tomcat插件 -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <port>8080</port> <!-- 设置端口号 -->
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
+
 </project>
