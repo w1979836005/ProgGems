@@ -3,7 +3,6 @@ package org.example.controller;
 import org.example.model.pojo.Result;
 import org.example.service.UserService;
 import org.example.service.impl.UserServiceImpl;
-import org.example.util.JsonUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

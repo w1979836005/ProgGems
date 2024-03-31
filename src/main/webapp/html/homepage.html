@@ -11,6 +11,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+
+    <!--    添加编辑器editor-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tui.editor Example</title>
+    <!-- 引入 tui.editor 的样式文件 -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css">
+    <!-- 引入 tui.editor 的 JavaScript 文件 -->
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+
+    <script src="../js/editor.js"></script>
+
     <style>
         .avatar {
             width: 40px; /* Adjust this value as needed */
@@ -80,6 +92,16 @@
             margin-left: 8px; /* 调整左侧间距 */
             font-size: 14px; /* 调整字体大小 */
         }
+
+        /* 将编辑器容器放置在页面底部 */
+        #editorContainer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff; /* 设置编辑器容器的背景色 */
+            z-index: 999; /* 设置层级，确保编辑器在顶部 */
+        }
     </style>
 </head>
 <body>
@@ -112,5 +134,44 @@
     </div>
 </header>
 <h1 class="subscribe">代码之家</h1>
+<button id="showEditorButton">editor</button>
+<div id="editorContainer" style="display: none;"></div>
+<script>
+    // document.addEventListener("DOMContentLoaded", function() {
+    //     // 获取按钮和编辑器容器的引用
+    //     const showEditorButton = document.querySelector("#showEditorButton");
+    //     const editorContainer = document.querySelector("#editorContainer");
+    //
+    //     // 定义自定义主题
+    //     const customTheme = {
+    //         content: {
+    //             background: '#ccc' // 设置编辑器区域的背景色为灰色
+    //         }
+    //     };
+    //
+    //     // 初始化编辑器
+    //     const editor = new toastui.Editor({
+    //         el: editorContainer,
+    //         initialEditType: 'markdown', // 初始编辑类型为 Markdown
+    //         previewStyle: 'vertical', // 预览样式为垂直布局
+    //         height: '300px', // 设置编辑器高度
+    //         theme: customTheme, // 使用自定义主题
+    //         initialValue: '' // 设置编辑器的初始内容
+    //     });
+    //
+    //     // 在按钮上添加点击事件监听器
+    //     showEditorButton.addEventListener("click", function() {
+    //         // 检查编辑器容器的当前显示状态
+    //         if (editorContainer.style.display === "none") {
+    //             // 如果编辑器容器当前是隐藏状态，则显示编辑器
+    //             editorContainer.style.display = "block";
+    //         } else {
+    //             // 如果编辑器容器当前是显示状态，则隐藏编辑器
+    //             editorContainer.style.display = "none";
+    //         }
+    //     });
+    // });
+
+</script>
 </body>
 </html>
