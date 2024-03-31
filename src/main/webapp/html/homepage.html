@@ -24,6 +24,99 @@
     <script src="../js/editor.js"></script>
 
     <style>
+        /*#showEditorButton{*/
+        /*    position: relative;*/
+        /*    top: 10px;*/
+        /*    left: 1600px;*/
+        /*}*/
+        /*#showEditorButton {*/
+        /*    background-color: transparent; !* 背景颜色透明 *!*/
+        /*    color: #007bff; !* 文字颜色 *!*/
+        /*    border: 2px solid #007bff; !* 边框 *!*/
+        /*    padding: 10px 20px; !* 内边距 *!*/
+        /*    font-size: 16px; !* 字体大小 *!*/
+        /*    cursor: pointer; !* 鼠标样式为手型 *!*/
+        /*    border-radius: 5px; !* 圆角 *!*/
+        /*    transition: background-color 0.3s ease; !* 过渡效果 *!*/
+        /*}*/
+
+        /*#showEditorButton:hover {*/
+        /*    background-color: rgba(0, 123, 255, 0.1); !* 鼠标悬停时的背景颜色 *!*/
+        /*}*/
+        /*#showEditorButton {*/
+        /*    position: fixed; !* 固定位置 *!*/
+        /*    top: 85px; !* 距离顶部的距离 *!*/
+        /*    right: 20px; !* 距离右侧的距离 *!*/
+        /*    background-color: transparent; !* 背景颜色透明 *!*/
+        /*    color: #007bff; !* 文字颜色 *!*/
+        /*    border: 2px solid #007bff; !* 边框 *!*/
+        /*    padding: 10px 20px; !* 内边距 *!*/
+        /*    font-size: 16px; !* 字体大小 *!*/
+        /*    cursor: pointer; !* 鼠标样式为手型 *!*/
+        /*    border-radius: 5px; !* 圆角 *!*/
+        /*    transition: background-color 0.3s ease; !* 过渡效果 *!*/
+        /*}*/
+
+        /*#showEditorButton:hover {*/
+        /*    background-color: rgba(0, 123, 255, 0.1); !* 鼠标悬停时的背景颜色 *!*/
+        /*}*/
+
+        /*#saveButton {*/
+        /*    position: fixed; !* 固定位置 *!*/
+        /*    top: 150px; !* 距离顶部的距离 *!*/
+        /*    right: 20px; !* 距离右侧的距离 *!*/
+        /*    background-color: transparent; !* 背景颜色透明 *!*/
+        /*    color: #007bff; !* 文字颜色 *!*/
+        /*    border: 2px solid #007bff; !* 边框 *!*/
+        /*    padding: 10px 20px; !* 内边距 *!*/
+        /*    font-size: 16px; !* 字体大小 *!*/
+        /*    cursor: pointer; !* 鼠标样式为手型 *!*/
+        /*    border-radius: 5px; !* 圆角 *!*/
+        /*    transition: background-color 0.2s ease; !* 过渡效果 *!*/
+        /*}*/
+
+        /*#saveButton {*/
+        /*    background-color: rgba(0, 123, 255, 0.1); !* 鼠标悬停时的背景颜色 *!*/
+        /*}*/
+
+
+        #showEditorButton {
+            position: fixed; /* 固定位置 */
+            top: 85px; /* 距离顶部的距离 */
+            right: 20px; /* 距离右侧的距离 */
+            background-color: transparent; /* 背景颜色透明 */
+            color: #007bff; /* 文字颜色 */
+            border: 2px solid #007bff; /* 边框 */
+            padding: 10px 20px; /* 内边距 */
+            font-size: 16px; /* 字体大小 */
+            cursor: pointer; /* 鼠标样式为手型 */
+            border-radius: 5px; /* 圆角 */
+            transition: background-color 0.3s ease; /* 过渡效果 */
+        }
+
+        #showEditorButton:hover {
+            background-color: rgba(0, 123, 255, 0.1); /* 鼠标悬停时的背景颜色 */
+        }
+
+        #saveButton {
+            position: fixed; /* 固定位置 */
+            top: 140px; /* 距离顶部的距离 */
+            right: 20px; /* 距离右侧的距离 */
+            background-color: transparent; /* 背景颜色透明 */
+            color: #007bff; /* 文字颜色 */
+            border: 2px solid #007bff; /* 边框 */
+            padding: 10px 20px; /* 内边距 */
+            font-size: 16px; /* 字体大小 */
+            cursor: pointer; /* 鼠标样式为手型 */
+            border-radius: 5px; /* 圆角 */
+            transition: background-color 0.2s ease; /* 过渡效果 */
+        }
+
+        #saveButton:hover {
+            background-color: rgba(0, 123, 255, 0.1); /* 鼠标悬停时的背景颜色 */
+        }
+
+
         .avatar {
             width: 40px; /* Adjust this value as needed */
             height: 40px; /* Adjust this value as needed */
@@ -134,7 +227,10 @@
     </div>
 </header>
 <h1 class="subscribe">代码之家</h1>
-<button id="showEditorButton">editor</button>
+<div id = "button">
+    <button id="showEditorButton">Editor</button>
+    <button id="saveButton">ESave</button>
+</div>
 <div id="editorContainer" style="display: none;"></div>
 <script>
     // document.addEventListener("DOMContentLoaded", function() {

@@ -1,7 +1,9 @@
+
 document.addEventListener("DOMContentLoaded", function() {
     // 获取按钮和编辑器容器的引用
     const showEditorButton = document.querySelector("#showEditorButton");
     const editorContainer = document.querySelector("#editorContainer");
+    const saveButton = document.querySelector("#saveButton");
 
     // 定义自定义主题
     const customTheme = {
@@ -20,15 +22,19 @@ document.addEventListener("DOMContentLoaded", function() {
         initialValue: '' // 设置编辑器的初始内容
     });
 
-    // 在按钮上添加点击事件监听器
+    // 在按钮上添加点击事件监听器，用于显示/隐藏编辑器
     showEditorButton.addEventListener("click", function() {
-        // 检查编辑器容器的当前显示状态
-        if (editorContainer.style.display === "none") {
-            // 如果编辑器容器当前是隐藏状态，则显示编辑器
-            editorContainer.style.display = "block";
-        } else {
-            // 如果编辑器容器当前是显示状态，则隐藏编辑器
-            editorContainer.style.display = "none";
-        }
+        // 切换编辑器的显示状态
+        editorContainer.style.display = (editorContainer.style.display === "none") ? "block" : "none";
+    });
+
+    // 在保存按钮上添加点击事件监听器，用于保存编辑器内容
+    saveButton.addEventListener("click", function() {
+        // 获取编辑器的内容
+        const content = editor.getMarkdown();
+        // 模拟保存操作，这里可以替换为实际的保存逻辑
+        console.log("Saving content:", content);
+        alert("Content saved successfully!");
     });
 });
+
