@@ -32,8 +32,34 @@ document.addEventListener("DOMContentLoaded", function() {
     saveButton.addEventListener("click", function() {
         // 获取编辑器的内容
         const content = editor.getMarkdown();
+        alert(content);
         // 模拟保存操作，这里可以替换为实际的保存逻辑
-        console.log("Saving content:", content);
+        // 创建 FormData 对象并添加编辑器内容作为参数
+        const formData = new FormData();
+        formData.append('content', content);
+
+        alert(formData);
+        // 发送 POST 请求到指定的保存文件的 Servlet
+        fetch('/myApp_war/UploadServlet', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Content-Type': 'text/plain' // 设置请求头的Content-Type为纯文本
+            }
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log(data); // 输出保存成功的消息
+                alert("Content saved successfully!");
+            })
+            .catch(error => {
+                console.error('There was a problem with your fetch operation:', error);
+            });
         alert("Content saved successfully!");
     });
 });
